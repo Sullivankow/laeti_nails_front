@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import './App.css'
 import Navbar from "./components/Navbar"
+import Hero from "./components/Hero"
 
 
 function App() {
@@ -15,7 +16,13 @@ function App() {
 
       <div>
       <Navbar />
-</div>
+      </div>
+
+
+      
+      <div>
+<Hero />
+      </div>
 
 
 

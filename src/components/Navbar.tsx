@@ -7,7 +7,13 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-light bg-primary">
       <div className="container-fluid d-flex justify-content-between align-items-center">
         {/* Logo */}
-        <a className="navbar-brand text-white" href="#">Laeti Nails</a>
+        <img 
+  src="src/assets/logo2.png" 
+  alt="logo_laeti_nail"
+          style={{ width: '120px', height: 'auto' }}// Définir la taille ici
+          
+/>
+        <a className="navbar-brand text-success "style={{ fontFamily: 'Playwrite US Trad, sans-serif',  fontSize: '28px' }} href="#">Laeti Nails</a>
 
         {/* Bouton Burger */}
         <button 
@@ -26,29 +32,33 @@ function Navbar() {
           <ul className="navbar-nav text-center">
             
             <li className="nav-item">
-              <a className="nav-link text-white" href="#">Accueil</a>
+              <a className="nav-link" href="#">Accueil</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#">À propos</a>
+              <a className="nav-link" href="#">À propos</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link disabled text-white" aria-disabled="true">Formules</a>
-                      </li>
-                      <li className="nav-item">
-              <a className="nav-link disabled text-white" aria-disabled="true">Réservations</a>
-                      </li>
-                      <li className="nav-item">
-              <a className="nav-link disabled text-white" aria-disabled="true">Galeries</a>
-                      </li>
-                      <li className="nav-item">
-              <a className="nav-link disabled text-white" aria-disabled="true">Contact</a>
+              <a className="nav-link" href="#">Formules</a>
             </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Réservations</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Galerie</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Contact</a>
+            </li>
+          
+            
+
+          
           </ul>
         </div>
 
         {/* Bouton Connexion */}
         <div>
-          <button className="btn btn-secondary">Connexion</button>
+          <button className="btn btn-secondary text-light">Connexion</button>
         </div>
       </div>
     </nav>
