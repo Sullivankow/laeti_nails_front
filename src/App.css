@@ -16,7 +16,7 @@
 
 .carousel-image {
     width: 100%;       /* Prend toute la largeur */
-    max-height: 700px; /* Réduit la hauteur maximale */
+    max-height: 600px; /* Réduit la hauteur maximale */
     object-fit: cover; /* Coupe l'image pour qu'elle rentre bien */
   }
   

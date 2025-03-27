@@ -9,7 +9,7 @@ function Hero() {
       <Carousel.Item>
         <img
           className="carousel-image"
-          src="src\images\ongle1.jpg"
+          src="src\images\couv1.jpg"
           alt="Premier slide"
         />
         <Carousel.Caption>
