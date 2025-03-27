@@ -24,17 +24,24 @@ function Navbar() {
         {/* Menu centré */}
         <div className={`collapse navbar-collapse justify-content-center ${isOpen ? "show" : ""}`} id="navbarNav">
           <ul className="navbar-nav text-center">
+            
             <li className="nav-item">
-              <a className="nav-link active text-white" aria-current="page" href="#">Home</a>
+              <a className="nav-link text-white" href="#">Accueil</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#">Features</a>
+              <a className="nav-link text-white" href="#">À propos</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#">Pricing</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled text-white" aria-disabled="true">Disabled</a>
+              <a className="nav-link disabled text-white" aria-disabled="true">Formules</a>
+                      </li>
+                      <li className="nav-item">
+              <a className="nav-link disabled text-white" aria-disabled="true">Réservations</a>
+                      </li>
+                      <li className="nav-item">
+              <a className="nav-link disabled text-white" aria-disabled="true">Galeries</a>
+                      </li>
+                      <li className="nav-item">
+              <a className="nav-link disabled text-white" aria-disabled="true">Contact</a>
             </li>
           </ul>
         </div>
