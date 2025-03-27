@@ -1,0 +1,35 @@
+/* ✅ Importer les fonctions et variables Bootstrap */
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+/* 🎨 Définition des couleurs pour un site Nail Art */
+$primary: #E8B4BC;   /* Rose poudré */
+$secondary: #F3E5D8; /* Beige nude */
+$success: #D4AF37;   /* Or champagne */
+$danger: #2B2B2B;    /* Noir profond */
+$warning: #FAF7F2;   /* Blanc perle */
+$info: #FADADD;      /* Rose clair */
+$light: #FFF5F5;     /* Rose très pâle */
+$dark: #4A4A4A;      /* Gris anthracite doux */
+
+/* ✅ Fusionner avec la carte des couleurs Bootstrap */
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "danger": $danger,
+    "warning": $warning,
+    "info": $info,
+    "light": $light,
+    "dark": $dark
+  )
+);
+
+/* 🌟 Importer Bootstrap pour appliquer les changements */
+@import "bootstrap/scss/bootstrap";
+
+
+
+
