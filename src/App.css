@@ -101,6 +101,10 @@
   }
   
 
+
+
+
+
   /*ICONS*/
   /* Section des icônes */
 .icons-section {
@@ -115,7 +119,7 @@
 .icons-section h3 {
   font-family: "Quicksand", sans-serif;
   font-size: 1.2rem;
-  margin: 15px;
+  margin: 10px;
   
 }
 
@@ -138,7 +142,7 @@
 }
 
 .icon {
-  weight: 50px;
+  
   height: 100px;
 }
 
@@ -150,8 +154,14 @@
 }
 
 
+
+
+
+
 /*FORMULES SECTION*/
 .formules-section {
+  width: max-content;
+  
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -167,3 +177,33 @@
   object-fit: cover; /* Coupe l'image pour qu'elle remplisse la zone */
   width: 100%; /* Assure que l'image prend toute la largeur de la card */
 }
+
+
+
+
+
+/* SECTION AVIS */
+.container-avis{
+  background-color: var(--info-color);
+  
+  
+}
+@keyframes scroll {
+  0% {
+      transform: translateX(100%); /* Commence à droite */
+  }
+  100% {
+      transform: translateX(-100%); /* Défile jusqu'à la gauche */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

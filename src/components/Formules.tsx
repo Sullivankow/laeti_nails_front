@@ -56,7 +56,7 @@ function Formules() {
     }, []);
 
     return (
-        <section id="formules-section" className={`formules-section ${isVisible ? "fade-in" : ""}`}>
+        <section id="formules-section" className={`formules-section container d-flex flex-column align-items-center text-center my-5 ${isVisible ? "fade-in" : ""}`}>
             <h1 className=" title-section text-center my-4">Nos Formules</h1>
             <Row xs={1} md={2} lg={4} className="g-4">
                 {formulesData.map((formule) => (
