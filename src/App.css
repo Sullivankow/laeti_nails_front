@@ -13,7 +13,12 @@
 --dark-color: #61213D;     /* Gris anthracite doux */
 }
 
-
+.title-section{
+  color: var(--succes-color);
+  font-family:"Playwrite US Trad", sans-serif;
+  font-size: 1.5rem;
+  margin:15px;
+}
 
 
 
@@ -54,13 +59,7 @@
     transform: translateX(50px); /* Décale l'élément à droite */
     transition: transform 1s ease-out, opacity 1s ease-out;
   }
-  .about-section h1{
-    color: var(--succes-color);
-    font-family:"Playwrite US Trad", sans-serif;
-    font-size: 1.5rem;
-    margin:15px;
-  }
-  
+ 
   .about-section.fade-in {
     opacity: 1; /* Lorsque visible, l'opacité devient 1 */
     transform: translateX(0); /* L'élément revient à sa position d'origine */
@@ -148,4 +147,23 @@
   transform: scale(1.2); /* Agrandissement */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   
+}
+
+
+/*FORMULES SECTION*/
+.formules-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.formules-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-img-top {
+  height: 400px; /* Ajuste selon tes besoins */
+  object-fit: cover; /* Coupe l'image pour qu'elle remplisse la zone */
+  width: 100%; /* Assure que l'image prend toute la largeur de la card */
 }
