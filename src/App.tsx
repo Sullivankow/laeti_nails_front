@@ -4,6 +4,8 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import IconSection from "./components/IconSection";
+import Formules from "./components/Formules";
 
 function App() {
   return (
@@ -17,8 +19,17 @@ function App() {
 
       <div>
         <About />
+        <IconSection />
       </div>
-    </div>
+
+      <div>
+        <Formules />
+      </div>
+
+
+
+
+    </div >
   );
 }
 

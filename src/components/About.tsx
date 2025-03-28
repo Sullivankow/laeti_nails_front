@@ -23,7 +23,8 @@ function About() {
         <section id="about-section" className={`about-section ${isVisible ? "fade-in" : ""}`}>
             <div className="about-content">
                 <div className="about-text">
-                    <h2>À propos de l'entreprise</h2>
+                    <h1>À propos de nous</h1>
+                    <h2> L'entreprise</h2>
                     <p>
                         Laeti Nails est une entreprise spécialisée dans la beauté des ongles.
                         Nous proposons des services de manucure et pédicure de qualité supérieure,
