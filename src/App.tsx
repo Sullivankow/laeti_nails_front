@@ -6,6 +6,8 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import IconSection from "./components/IconSection";
 import Formules from "./components/Formules";
+import Avis from "./components/Avis";
+import Reservation from "./components/Reservation";
 
 function App() {
   return (
@@ -24,6 +26,15 @@ function App() {
 
       <div>
         <Formules />
+      </div>
+
+      <div>
+        <Avis />
+      </div>
+
+      <div>
+        <Reservation />
+
       </div>
 
 
