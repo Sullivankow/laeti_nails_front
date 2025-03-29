@@ -28,7 +28,7 @@ function Navbar() {
         </button>
 
         {/* Menu centré */}
-        <div className={`collapse navbar-collapse justify-content-center ${isOpen ? "show" : ""}`} id="navbarNav">
+        <div className={`collapse navbar-collapse justify-content-end ${isOpen ? "show" : ""}`} id="navbarNav">
           <ul className="navbar-nav text-center">
 
             <li className="nav-item">
@@ -49,17 +49,17 @@ function Navbar() {
             <li className="nav-item">
               <a className="nav-link" href="#">Contact</a>
             </li>
-
+            {/* Bouton Connexion */}
+            <div>
+              <button className="btn btn-secondary text-light">Connexion</button>
+            </div>
 
 
 
           </ul>
         </div>
 
-        {/* Bouton Connexion */}
-        <div>
-          <button className="btn btn-secondary text-light">Connexion</button>
-        </div>
+
       </div>
     </nav>
   );

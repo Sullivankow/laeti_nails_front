@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
 import "../App.css"; // Assure-toi d'avoir les styles pour l'animation
-import Button from "react-bootstrap/esm/Button";
 
 const formulesData = [
     {
@@ -39,7 +39,6 @@ const formulesData = [
 function Formules() {
     const [isVisible, setIsVisible] = useState(false);
 
-    // Détection du scroll pour déclencher l'animation
     useEffect(() => {
         const handleScroll = () => {
             const section = document.getElementById("formules-section");
@@ -56,21 +55,21 @@ function Formules() {
     }, []);
 
     return (
-        <section id="formules-section" className={`formules-section container d-flex flex-column align-items-center text-center my-5 ${isVisible ? "fade-in" : ""}`}>
-            <h1 className=" title-section text-center my-4">Nos Formules</h1>
-            <Row xs={1} md={2} lg={4} className="g-4">
+        <section id="formules-section" className={`formules-section container text-center my-5 ${isVisible ? "fade-in" : ""}`}>
+            <h1 className="title-section text-center my-4">Nos Formules</h1>
+            <Row className="justify-content-center">
                 {formulesData.map((formule) => (
-                    <Col key={formule.id}>
-                        <Card className="h-100 shadow-sm">
-                            <Card.Img variant="top" src={formule.image} alt={formule.title} />
-                            <Card.Body>
+                    <Col key={formule.id} xs={12} md={6} lg={3} className="d-flex justify-content-center">
+                        <Card className="shadow-sm h-100 card-custom">
+                            <Card.Img variant="top" src={formule.image} alt={formule.title} className="card-img-top" />
+                            <Card.Body className="d-flex flex-column">
                                 <Card.Title>{formule.title}</Card.Title>
                                 <Card.Text>{formule.description}</Card.Text>
                                 <h5 className="text-primary">{formule.price}</h5>
+                                <Button variant="success" size="lg" className="mt-auto">
+                                    <a href="#" className="text-white text-decoration-none">Réserver</a>
+                                </Button>
                             </Card.Body>
-                            <Button variant="success" size="lg" className="mt-3"><a href="#" className="text-white text-decoration-none">
-                                Réserver </a>
-                            </Button>
                         </Card>
                     </Col>
                 ))}
@@ -80,3 +79,5 @@ function Formules() {
 }
 
 export default Formules;
+
+

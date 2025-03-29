@@ -159,9 +159,8 @@
 
 
 /*FORMULES SECTION*/
+
 .formules-section {
-  width: max-content;
-  
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -172,11 +171,27 @@
   transform: translateY(0);
 }
 
-.card-img-top {
-  height: 400px; /* Ajuste selon tes besoins */
-  object-fit: cover; /* Coupe l'image pour qu'elle remplisse la zone */
-  width: 100%; /* Assure que l'image prend toute la largeur de la card */
+/* Cards */
+.card-custom {
+  width: 100%;
+  max-width: 350px; /* Limite la taille sur les grands écrans */
+  border-radius: 10px;
+  overflow: hidden;
 }
+
+/* Images */
+.card-img-top {
+  height: 250px; /* Taille ajustée pour la responsivité */
+  object-fit: cover; /* Empêche l'étirement des images */
+}
+
+/* Bouton */
+.card-body a {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
 
 
 
@@ -185,9 +200,14 @@
 /* SECTION AVIS */
 .container-avis{
   background-color: var(--info-color);
-  
-  
-}
+  }
+  .avis-text, .avis-nom{
+font-family: "Quicksand", sans-serif;
+  }
+
+
+
+
 @keyframes scroll {
   0% {
       transform: translateX(100%); /* Commence à droite */
@@ -202,6 +222,61 @@
 
 
 
+/*SECTION GALERIE*/
+/* SECTION GALERIE */
+.galerie-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* GRID RESPONSIVE */
+.galerie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+/* ITEM DE LA GALERIE */
+.galerie-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* IMAGES */
+.galerie-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* OVERLAY AU SURVOL */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* EFFET AU SURVOL */
+.galerie-item:hover .galerie-img {
+  transform: scale(1.1);
+}
+
+.galerie-item:hover .overlay {
+  opacity: 1;
+}
 
 
 

@@ -23,12 +23,12 @@ function Avis() {
     }, []);
 
     const avisClients = [
-        { id: 1, nom: "Sophie D.", texte: "Super zoo ! Mes enfants ont adoré la visite.", note: "⭐⭐⭐⭐⭐" },
-        { id: 2, nom: "Julien M.", texte: "Les animaux sont bien traités et le personnel est sympa.", note: "⭐⭐⭐⭐" },
-        { id: 3, nom: "Carla L.", texte: "Expérience magique, surtout avec les girafes !", note: "⭐⭐⭐⭐⭐" },
-        { id: 4, nom: "Thomas P.", texte: "Belle découverte, je recommande.", note: "⭐⭐⭐⭐" },
-        { id: 5, nom: "Thomas P.", texte: "Belle découverte, je recommande.", note: "⭐⭐⭐⭐" },
-        { id: 6, nom: "Thomas P.", texte: "Belle découverte, je recommande.", note: "⭐⭐⭐⭐" },
+        { id: 1, nom: "Sophie D.", texte: "Super salon ! L'esthéticienne est très pro.", note: "⭐⭐⭐⭐⭐" },
+        { id: 2, nom: "Hélène M.", texte: "très contente du résultat.", note: "⭐⭐⭐⭐" },
+        { id: 3, nom: "Carla L.", texte: "c'est la 4ème fois que je viens, toujours satisfaite du résutat !", note: "⭐⭐⭐⭐⭐" },
+        { id: 4, nom: "Julia P.", texte: "RAS au top comme dab", note: "⭐⭐⭐⭐" },
+        { id: 5, nom: "Sev P.", texte: "Belle découverte, je recommande.", note: "⭐⭐⭐⭐" },
+        { id: 6, nom: "Isabelle P.", texte: "Je recommande", note: "⭐⭐⭐⭐" },
     ];
 
     return (
@@ -37,9 +37,9 @@ function Avis() {
             initial={{ opacity: 0, x: 100 }} // Initialisation de l'animation à droite
             animate={isVisible ? { opacity: 1, x: 0 } : {}} // Animation à gauche
             transition={{ duration: 1, ease: "easeOut" }} // Effet fluide
-            className="container-avis my-4"
+            className=" container-avis my-4"
         >
-            <h2 className="text-center mb-4">Les avis de nos clientes</h2>
+            <h2 className="title-section text-center mb-4 pt-2">Les avis de nos clientes</h2>
 
             <motion.div
                 className="avis-container"
@@ -66,12 +66,12 @@ function Avis() {
                             className="avis-card"
                             style={{
                                 minWidth: "300px", // Largeur fixe des avis
-                                margin: "0 35px", // Espacement entre les avis
+                                margin: "0 50px", // Espacement entre les avis
                                 flexShrink: 0, // Ne pas permettre le rétrécissement des avis
                             }}
                         >
-                            <p className="avis-texte">"{avis.texte}"</p>
-                            <p className="avis-nom">{avis.nom}</p>
+                            <p className="avis-texte font-bold">"{avis.texte}"</p>
+                            <p className="avis-nom font-bold">{avis.nom}</p>
                             <p className="avis-note">{avis.note}</p>
                         </div>
                     ))}
