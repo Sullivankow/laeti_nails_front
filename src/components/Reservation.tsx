@@ -1,11 +1,18 @@
-
-
 import React, { useState } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import "../App.css";
 
-function Reservation() {
-    const [reservation, setReservation] = useState({
+// Définition du type pour les données de réservation
+interface ReservationData {
+    name: string;
+    email: string;
+    date: string;
+    time: string;
+    service: string;
+}
+
+const Reservation: React.FC = () => {
+    const [reservation, setReservation] = useState<ReservationData>({
         name: "",
         email: "",
         date: "",
@@ -13,11 +20,17 @@ function Reservation() {
         service: "",
     });
 
-    const handleChange = (e) => {
-        setReservation({ ...reservation, [e.target.name]: e.target.value });
+    // Gestion du changement de valeur des champs du formulaire
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setReservation(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
     };
 
-    const handleSubmit = (e) => {
+    // Gestion de la soumission du formulaire
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log("Réservation envoyée :", reservation);
         // Ici tu peux envoyer les données à ton backend Symfony via une API
@@ -26,7 +39,7 @@ function Reservation() {
     return (
         <section id="reservation-section" className="reservation-section">
             <Container>
-                <h2 className="text-center my-4">Réservez votre prestation</h2>
+                <h2 className="title-section text-center my-4 pt-4">Réservez votre prestation</h2>
                 <Row className="justify-content-center">
                     <Col md={6}>
                         <Form onSubmit={handleSubmit} className="p-4 shadow rounded bg-light">
@@ -94,6 +107,11 @@ function Reservation() {
             </Container>
         </section>
     );
-}
+};
 
 export default Reservation;
+
+
+
+
+

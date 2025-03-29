@@ -12,7 +12,7 @@ const images = [
     { id: 6, src: "src/images/ongle1.jpg", title: "ongle" },
     { id: 7, src: "src/images/ongle1.jpg", title: "ongle" },
     { id: 8, src: "src/images/ongle1.jpg", title: "ongle" },
-    { id: 9, src: "src/images/ongle1.jpg", title: "ongle" },
+
 ];
 
 function Galerie() {

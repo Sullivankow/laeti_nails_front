@@ -39,7 +39,7 @@ function Avis() {
             transition={{ duration: 1, ease: "easeOut" }} // Effet fluide
             className=" container-avis my-4"
         >
-            <h2 className="title-section text-center mb-4 pt-2">Les avis de nos clientes</h2>
+            <h2 className="title-section text-center mb-4 pt-4">Les avis de nos clientes</h2>
 
             <motion.div
                 className="avis-container"

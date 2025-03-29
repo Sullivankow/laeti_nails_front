@@ -223,7 +223,7 @@ font-family: "Quicksand", sans-serif;
 
 
 /*SECTION GALERIE*/
-/* SECTION GALERIE */
+
 .galerie-section {
   max-width: 1200px;
   margin: 0 auto;
@@ -282,3 +282,7 @@ font-family: "Quicksand", sans-serif;
 
 
 
+/*SECTION RESERVATION*/ 
+.reservation-section {
+  background-color: var(--info-color);
+}
