@@ -37,7 +37,7 @@ const Reservation: React.FC = () => {
     };
 
     return (
-        <section id="reservation-section" className="reservation-section">
+        <section id="reservation-section" className="reservation-section pb-4">
             <Container>
                 <h2 className="title-section text-center my-4 pt-4">Réservez votre prestation</h2>
                 <Row className="justify-content-center">
