@@ -15,10 +15,12 @@ const Footer: React.FC = () => {
                         <div>
                             <h5>Navigation</h5>
                             <ul className="list-unstyled d-flex justify-content-center gap-4">
-                                <li><a href="#home" className="text-light text-decoration-none">Accueil</a></li>
-                                <li><a href="#services" className="text-light text-decoration-none">Services</a></li>
-                                <li><a href="#gallery" className="text-light text-decoration-none">Galerie</a></li>
-                                <li><a href="#contact" className="text-light text-decoration-none">Contact</a></li>
+                                <li><a href="#" className="text-light text-decoration-none">Accueil</a></li>
+                                <li><a href="#about-section" className="text-light text-decoration-none">À propos</a></li>
+                                <li><a href="#formules-section" className="text-light text-decoration-none">Formules</a></li>
+                                <li><a href="#galerie-section" className="text-light text-decoration-none">Galerie</a></li>
+                                <li><a href="#reservation-section" className="text-light text-decoration-none">Réservation</a></li>
+                                <li><a href="#" className="text-light text-decoration-none">Contact</a></li>
                             </ul>
                         </div>
                     </Col>
@@ -55,7 +57,7 @@ const Footer: React.FC = () => {
                 {/* Copyright */}
                 <Row>
                     <Col className="text-center mt-3">
-                        <p className="m-0">&copy; {new Date().getFullYear()} Centre Esthétique - Tous droits réservés</p>
+                        <p className="m-0">&copy; {new Date().getFullYear()} Laeti Nails - Tous droits réservés</p>
                     </Col>
                 </Row>
             </Container>

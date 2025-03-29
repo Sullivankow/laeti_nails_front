@@ -63,8 +63,8 @@ function Formules() {
                         <Card className="shadow-sm h-100 card-custom">
                             <Card.Img variant="top" src={formule.image} alt={formule.title} className="card-img-top" />
                             <Card.Body className="d-flex flex-column">
-                                <Card.Title>{formule.title}</Card.Title>
-                                <Card.Text>{formule.description}</Card.Text>
+                                <Card.Title className="title-section">{formule.title}</Card.Title>
+                                <Card.Text className="formules-text">{formule.description}</Card.Text>
                                 <h5 className="text-primary">{formule.price}</h5>
                                 <Button variant="success" size="lg" className="mt-auto">
                                     <a href="#" className="text-white text-decoration-none">Réserver</a>

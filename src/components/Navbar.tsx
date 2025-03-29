@@ -35,16 +35,16 @@ function Navbar() {
               <a className="nav-link" href="#">Accueil</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">À propos</a>
+              <a className="nav-link" href="#about-section">À propos</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Formules</a>
+              <a className="nav-link" href="#formules-section">Formules</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Réservations</a>
+              <a className="nav-link" href="#galerie-section">Galerie</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Galerie</a>
+              <a className="nav-link" href="#reservation-section">Réservation</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">Contact</a>
