@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
                     <Col md={4} className="mb-3 d-flex justify-content-center">
                         <div>
                             <h5>Navigation</h5>
-                            <ul className="list-unstyled d-flex justify-content-center gap-4">
+                            <ul className="list-unstyled justify-content-center gap-6">
                                 <li><a href="#" className="text-light text-decoration-none">Accueil</a></li>
                                 <li><a href="#about-section" className="text-light text-decoration-none">À propos</a></li>
                                 <li><a href="#formules-section" className="text-light text-decoration-none">Formules</a></li>
