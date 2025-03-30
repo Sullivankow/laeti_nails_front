@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,7 +52,9 @@ function Navbar() {
             </li>
             {/* Bouton Connexion */}
             <div>
-              <button className="btn btn-secondary text-light">Connexion</button>
+              <button className="btn btn-secondary text-light">
+                <Link to="/login" className="text-light">Connexion</Link>
+              </button>
             </div>
 
 
