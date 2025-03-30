@@ -48,12 +48,12 @@ function Navbar() {
               <a className="nav-link" href="#reservation-section">Réservation</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Contact</a>
+              <Link to="/contact" className="nav-link">Contact</Link>
             </li>
             {/* Bouton Connexion */}
             <div>
               <button className="btn btn-secondary text-light">
-                <Link to="/login" className="text-light">Connexion</Link>
+                <Link to="/login" className="text-light text-decoration-none">Connexion</Link>
               </button>
             </div>
 

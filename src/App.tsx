@@ -12,6 +12,7 @@ import Reservation from "./components/Reservation";
 import Galerie from "./components/Galerie";
 import Footer from "./components/Footer";
 import Login from "./pages/Login"; // Import de la page Login
+import Contact from "./pages/Contact"; // Import de la page Login
 
 function App() {
   return (
@@ -36,9 +37,11 @@ function App() {
               </div>
             }
           />
-          
+
           {/* Route pour la page de connexion */}
           <Route path="/login" element={<Login />} />
+          {/* Route pour la page de contact */}
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
     </Router>

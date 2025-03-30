@@ -327,3 +327,57 @@ font-family: "Quicksand", sans-serif;
 .reservation-section {
   background-color: var(--info-color);
 }
+
+
+
+
+
+/*PAGE DE CONNEXION*/ 
+/* Styles spécifiques à la page de connexion */
+.login-container {
+  background-color: #f8f9fa; /* Couleur de fond claire */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  padding: 30px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+h2 {
+  color: #333;
+  font-size: 1.8rem;
+}
+
+.form-input {
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+button {
+  border-radius: 4px;
+}
+
+button.btn-primary {
+  background-color: var(--succes-color);
+  border: none;
+}
+
+button.btn-primary:hover {
+  background-color: var(--dark-color);
+}
+
+.btn-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
