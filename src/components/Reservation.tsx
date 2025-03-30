@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import "../App.css";
 
-// Définition du type pour les données de réservation
 interface ReservationData {
     name: string;
     email: string;
@@ -20,20 +19,43 @@ const Reservation: React.FC = () => {
         service: "",
     });
 
-    // Gestion du changement de valeur des champs du formulaire
+    // 📆 Dates déjà réservées
+    const reservedDates = ["2025-04-10", "2025-04-15", "2025-04-20"];
+
+    // 🕒 Heures déjà réservées (à associer à une date spécifique si besoin)
+    const reservedTimes = ["10:00", "14:00", "16:30"];
+
+    // Vérifie si une date est indisponible
+    const isDateDisabled = (date: string) => reservedDates.includes(date);
+
+    // Vérifie si une heure est indisponible
+    const isTimeDisabled = (time: string) => reservedTimes.includes(time);
+
+    // Gère les changements de formulaire
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
+
+        // Vérifie si l'utilisateur essaie de sélectionner une date bloquée
+        if (name === "date" && isDateDisabled(value)) {
+            alert("Cette date est déjà réservée. Veuillez en choisir une autre.");
+            return;
+        }
+
+        // Vérifie si l'utilisateur essaie de sélectionner une heure bloquée
+        if (name === "time" && isTimeDisabled(value)) {
+            alert("Cette heure est déjà réservée. Veuillez en choisir une autre.");
+            return;
+        }
+
         setReservation(prevState => ({
             ...prevState,
             [name]: value
         }));
     };
 
-    // Gestion de la soumission du formulaire
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log("Réservation envoyée :", reservation);
-        // Ici tu peux envoyer les données à ton backend Symfony via une API
     };
 
     return (
@@ -45,24 +67,12 @@ const Reservation: React.FC = () => {
                         <Form onSubmit={handleSubmit} className="p-4 shadow rounded bg-light">
                             <Form.Group className="mb-3">
                                 <Form.Label>Nom</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    name="name"
-                                    value={reservation.name}
-                                    onChange={handleChange}
-                                    required
-                                />
+                                <Form.Control type="text" name="name" value={reservation.name} onChange={handleChange} required />
                             </Form.Group>
 
                             <Form.Group className="mb-3">
                                 <Form.Label>Email</Form.Label>
-                                <Form.Control
-                                    type="email"
-                                    name="email"
-                                    value={reservation.email}
-                                    onChange={handleChange}
-                                    required
-                                />
+                                <Form.Control type="email" name="email" value={reservation.email} onChange={handleChange} required />
                             </Form.Group>
 
                             <Form.Group className="mb-3">
@@ -73,6 +83,7 @@ const Reservation: React.FC = () => {
                                     value={reservation.date}
                                     onChange={handleChange}
                                     required
+                                    min={new Date().toISOString().split("T")[0]} // Bloque les dates passées
                                 />
                             </Form.Group>
 
@@ -84,7 +95,16 @@ const Reservation: React.FC = () => {
                                     value={reservation.time}
                                     onChange={handleChange}
                                     required
+                                    list="available-times"
                                 />
+                                {/* Liste des heures disponibles */}
+                                <datalist id="available-times">
+                                    {["09:00", "10:00", "11:00", "14:00", "15:00", "16:30", "18:00"]
+                                        .filter(time => !isTimeDisabled(time)) // Filtrer les heures bloquées
+                                        .map((time, index) => (
+                                            <option key={index} value={time} />
+                                        ))}
+                                </datalist>
                             </Form.Group>
 
                             <Form.Group className="mb-3">
@@ -98,9 +118,7 @@ const Reservation: React.FC = () => {
                                 </Form.Select>
                             </Form.Group>
 
-                            <Button variant="primary" type="submit" className="w-100">
-                                Réserver
-                            </Button>
+                            <Button variant="primary" type="submit" className="w-100">Réserver</Button>
                         </Form>
                     </Col>
                 </Row>
@@ -110,6 +128,9 @@ const Reservation: React.FC = () => {
 };
 
 export default Reservation;
+
+
+
 
 
 
