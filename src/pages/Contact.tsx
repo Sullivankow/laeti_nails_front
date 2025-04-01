@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Button, Form, Container, Row, Col } from "react-bootstrap";
+import { Button, Form, Container, Row, Col, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-// Définition du type de données du formulaire 
+// Définition des données du formulaire
 interface ContactData {
     nom: string;
     email: string;
@@ -18,33 +18,50 @@ const Contact: React.FC = () => {
         commentaire: "",
     });
 
-    const [errors, setErrors] = useState<Partial<ContactData>>({}); // Stockage des erreurs
-    const navigate = useNavigate(); // Hook pour la navigation après soumission
+    const [errors, setErrors] = useState<Partial<ContactData>>({});
+    const [isFormValid, setIsFormValid] = useState(false); // État du bouton
+    const [messageEnvoye, setMessageEnvoye] = useState(false); // Message de confirmation
+    const navigate = useNavigate();
 
-    // Gère les changements dans les inputs
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    // Vérification des erreurs
+    // Vérifie si tous les champs sont remplis
     const validateForm = () => {
         const newErrors: Partial<ContactData> = {};
         if (!formData.nom.trim()) newErrors.nom = "Le nom est obligatoire";
         if (!formData.email.trim()) newErrors.email = "L'email est obligatoire";
         if (!formData.sujet.trim()) newErrors.sujet = "Le sujet est obligatoire";
         if (!formData.commentaire.trim()) newErrors.commentaire = "Le commentaire est obligatoire";
+
         setErrors(newErrors);
-        return Object.keys(newErrors).length === 0; // Correction ici
+        setIsFormValid(Object.keys(newErrors).length === 0);
     };
 
-    // Gestion de la soumission du formulaire 
-    const handleContact = (e: React.FormEvent) => {
-        e.preventDefault(); // Empêche le chargement de la page après soumission
+    // Gère les changements dans les champs du formulaire
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+        validateForm(); // Vérifie à chaque modification si le formulaire est valide
+    };
 
-        if (validateForm()) {
+    // Gestion de l'envoi du formulaire
+    const handleContact = (e: React.FormEvent) => {
+        e.preventDefault(); // Empêche le rechargement de la page
+
+        if (isFormValid) {
             console.log("Données envoyées :", formData);
-            alert("Votre message a bien été envoyé !");
-            navigate("/"); // Redirection après soumission
+            setMessageEnvoye(true); // Affiche le message de confirmation
+
+            // Réinitialisation du formulaire après 3 secondes
+            setTimeout(() => {
+                setMessageEnvoye(false);
+                setFormData({
+                    nom: "",
+                    email: "",
+                    sujet: "",
+                    commentaire: "",
+                });
+                setIsFormValid(false); // Désactive à nouveau le bouton
+            }, 3000);
+
+            navigate("/"); // Redirection après soumission (si nécessaire)
         }
     };
 
@@ -107,10 +124,27 @@ const Contact: React.FC = () => {
                             <Form.Control.Feedback type="invalid">{errors.commentaire}</Form.Control.Feedback>
                         </Form.Group>
 
-                        {/* Bouton d'envoi */}
-                        <Button variant="primary" type="submit" className="w-100">
+                        {/* Bouton d'envoi (désactivé tant que les champs ne sont pas remplis) */}
+                        <Button variant="primary" type="submit" className="w-100" disabled={!isFormValid}>
                             Envoyer
                         </Button>
+
+                        {/* Message de confirmation en vert */}
+                        {messageEnvoye && (
+                            <Alert variant="success" className="mt-3">
+                                Votre message a bien été envoyé !
+                            </Alert>
+                        )}
+
+                        <div className="text-center mt-3">
+                            <Button
+                                variant="link"
+                                onClick={() => navigate("/")}
+                                className="btn-link text-dark "
+                            >
+                                Retour à l'accueil
+                            </Button>
+                        </div>
                     </Form>
                 </Col>
             </Row>
