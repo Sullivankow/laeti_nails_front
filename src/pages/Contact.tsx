@@ -61,7 +61,7 @@ const Contact: React.FC = () => {
                 setIsFormValid(false); // Désactive à nouveau le bouton
             }, 3000);
 
-            navigate("/"); // Redirection après soumission (si nécessaire)
+           
         }
     };
 
