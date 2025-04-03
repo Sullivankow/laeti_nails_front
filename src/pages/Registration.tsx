@@ -152,6 +152,16 @@ const SignupForm = () => {
                         <Button variant="primary text-white" type="submit" className="w-100">
                             Inscription
                         </Button>
+
+
+                        <div className="text-center mt-3">
+                            <Button variant="link" onClick={() => navigate("/")} className="btn-link text-dark">
+                                Retour à l'accueil
+                            </Button>
+                            <Button variant="link" onClick={() => navigate("/Login")} className="btn-link text-dark">
+                                J'ai déjà un compte
+                            </Button>
+                        </div>
                     </Form>
                 </Col>
             </Row>
