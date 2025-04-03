@@ -94,6 +94,9 @@ const Login: React.FC = () => {
                                     <Button variant="link" onClick={() => navigate("/")} className="btn-link text-dark">
                                         Retour à l'accueil
                                     </Button>
+                                    <Button variant="link" onClick={() => navigate("/")} className="btn-link text-dark">
+                                        Pas encore de compte?
+                                    </Button>
                                 </div>
                             </Form>
                         </div>
