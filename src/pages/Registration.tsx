@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Form, Button, Alert, Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
+
+//Initialisation des champs du formulaire et du type 
 const SignupForm = () => {
     const [formData, setFormData] = useState<{
         firstName: string;
@@ -21,9 +23,11 @@ const SignupForm = () => {
     const [successMessage, setSuccessMessage] = useState("");
     const navigate = useNavigate();
 
+    //Expression régulière pourc- création de mot de passe robuste 
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
 
+    //Validation du formulaire avec les champs requis 
     const validateForm = () => {
         const newErrors: Record<string, string> = {};
         if (!formData.firstName.trim()) newErrors.firstName = "Le prénom est requis";
@@ -38,10 +42,16 @@ const SignupForm = () => {
         return Object.keys(newErrors).length === 0;
     };
 
+
+    //Mise à jour du formulaire avec les nouvelles données
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+
+
+
+    //Appel API pour envoi des données du formulaire en BDD
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (validateForm()) {
