@@ -52,7 +52,7 @@ function Navbar() {
         {/* Menu centré */}
         <div className={`collapse navbar-collapse justify-content-end ${isOpen ? "show" : ""}`} id="navbarNav">
           <ul className="navbar-nav text-center">
-            <li className="nav-item"><a className="nav-link" href="#">Accueil</a></li>
+            <li className="nav-item"><a className="nav-link" href="/">Accueil</a></li>
             <li className="nav-item"><a className="nav-link" href="#about-section">À propos</a></li>
             <li className="nav-item"><a className="nav-link" href="#formules-section">Formules</a></li>
             <li className="nav-item"><a className="nav-link" href="#galerie-section">Galerie</a></li>

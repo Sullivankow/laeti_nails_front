@@ -13,6 +13,7 @@ import Galerie from "./components/Galerie";
 import Footer from "./components/Footer";
 import Login from "./pages/Login"; // Import de la page Login
 import Contact from "./pages/Contact"; // Import de la page Login
+import Registration from "./pages/Registration"; // Import de la page Registration
 
 function App() {
   return (
@@ -42,6 +43,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           {/* Route pour la page de contact */}
           <Route path="/contact" element={<Contact />} />
+          {/* Route pour la page d'inscription */}
+          <Route path="/registration" element={<Registration />} />
+
         </Routes>
       </div>
     </Router>

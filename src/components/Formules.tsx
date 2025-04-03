@@ -67,7 +67,7 @@ function Formules() {
                                 <Card.Text className="formules-text">{formule.description}</Card.Text>
                                 <h5 className="text-primary">{formule.price}</h5>
                                 <Button variant="success" size="lg" className="mt-auto">
-                                    <a href="#Reservation" className="text-white text-decoration-none">Réserver</a>
+                                    <a href="#reservation-section" className="text-white text-decoration-none">Réserver</a>
                                 </Button>
                             </Card.Body>
                         </Card>

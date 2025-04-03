@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
     return (
@@ -20,7 +21,7 @@ const Footer: React.FC = () => {
                                 <li><a href="#formules-section" className="text-light text-decoration-none">Formules</a></li>
                                 <li><a href="#galerie-section" className="text-light text-decoration-none">Galerie</a></li>
                                 <li><a href="#reservation-section" className="text-light text-decoration-none">Réservation</a></li>
-                                <li><a href="#" className="text-light text-decoration-none">Contact</a></li>
+                                <li><Link to="/contact" className="nav-link">Contact</Link></li>
                             </ul>
                         </div>
                     </Col>
