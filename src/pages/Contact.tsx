@@ -61,7 +61,7 @@ const Contact: React.FC = () => {
                 setIsFormValid(false); // Désactive à nouveau le bouton
             }, 3000);
 
-           
+
         }
     };
 
@@ -69,7 +69,7 @@ const Contact: React.FC = () => {
         <Container className="mt-5">
             <Row className="justify-content-md-center">
                 <Col md={6}>
-                    <h2 className="text-center">Contactez-nous</h2>
+                    <h2 className="title-section text-center">Contactez-nous</h2>
                     <Form onSubmit={handleContact}>
                         {/* Nom */}
                         <Form.Group className="mb-3">
