@@ -17,6 +17,30 @@ const ReviewForm = () => {
         <Container className="my-5">
             <Card className="p-4 shadow-lg rounded-4">
                 <h3 className="text-center mb-4">Laissez un avis ✨</h3>
+                <Form.Group className="mb-3">
+                    <Form.Label>Note</Form.Label>
+                    <div>
+                        {[...Array(5)].map((_, index) => {
+                            const rating = index + 1;
+                            const isFilled = rating <= (hover ?? stars);
+                            const starClass = isFilled ? 'fas fa-star' : 'far fa-star';
+
+                            return (
+                                <button
+                                    key={rating}
+                                    type="button"
+                                    className="bg-transparent border-0 p-0 me-2"
+                                    onClick={() => setStars(rating)}
+                                    onMouseEnter={() => setHover(rating)}
+                                    onMouseLeave={() => setHover(null)}
+                                    aria-label={`Évaluer ${rating} étoile${rating > 1 ? 's' : ''}`}
+                                >
+                                    <i className={`${starClass} fa-xl ${isFilled ? 'text-warning' : 'text-muted'}`} />
+                                </button>
+                            );
+                        })}
+                    </div>
+                </Form.Group>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3">
                         <Form.Label>Votre prénom</Form.Label>
@@ -29,30 +53,7 @@ const ReviewForm = () => {
                         />
                     </Form.Group>
 
-                    <Form.Group className="mb-3">
-                        <Form.Label>Note</Form.Label>
-                        <div>
-                            {[...Array(5)].map((_, index) => {
-                                const rating = index + 1;
-                                const isFilled = rating <= (hover ?? stars);
-                                const starClass = isFilled ? 'fas fa-star' : 'far fa-star';
 
-                                return (
-                                    <button
-                                        key={rating}
-                                        type="button"
-                                        className="bg-transparent border-0 p-0 me-2"
-                                        onClick={() => setStars(rating)}
-                                        onMouseEnter={() => setHover(rating)}
-                                        onMouseLeave={() => setHover(null)}
-                                        aria-label={`Évaluer ${rating} étoile${rating > 1 ? 's' : ''}`}
-                                    >
-                                        <i className={`${starClass} fa-xl ${isFilled ? 'text-warning' : 'text-muted'}`} />
-                                    </button>
-                                );
-                            })}
-                        </div>
-                    </Form.Group>
 
                     <Form.Group className="mb-3">
                         <Form.Label>Commentaire</Form.Label>
