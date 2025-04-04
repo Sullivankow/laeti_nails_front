@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import Login from "./pages/Login"; // Import de la page Login
 import Contact from "./pages/Contact"; // Import de la page Login
 import Registration from "./pages/Registration"; // Import de la page Registration
+import Reviews from "./pages/Reviews"; // Import de la page formulaire avis
 
 function App() {
   return (
@@ -45,6 +46,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           {/* Route pour la page d'inscription */}
           <Route path="/registration" element={<Registration />} />
+          {/* Route pour la page formulaire avis */}
+          <Route path="/review" element={<Reviews />} />
 
         </Routes>
       </div>

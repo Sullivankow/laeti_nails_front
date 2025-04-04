@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../App.css";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function Avis() {
     const [isVisible, setIsVisible] = useState(false);
@@ -80,7 +81,7 @@ function Avis() {
             </motion.div>
             <div className="d-flex justify-content-center pb-2">
                 <Button variant="success" size="lg" className="mt-auto">
-                    <a href="#" className="text-white text-decoration-none">Ajouter un avis</a>
+                    <Link to="/review" className="text-white text-decoration-none">Ajouter un avis</Link>
                 </Button>
             </div>
         </motion.section>
