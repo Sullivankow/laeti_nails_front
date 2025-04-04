@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Form, Container, Row, Col, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 //@ts-expect-error désactive vérif ts
-import { setAuth } from "../utils/auth"; // Assurez-vous que ce fichier est bien importé
+import { setAuth } from "../utils/auth";
 
 const Login: React.FC = () => {
     const [formData, setFormData] = useState({ email: "", password: "" });

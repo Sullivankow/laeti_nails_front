@@ -118,7 +118,7 @@ const Reservation: React.FC = () => {
                                 </Form.Select>
                             </Form.Group>
 
-                            <Button variant="primary" type="submit" className="w-100">Réserver</Button>
+                            <Button variant="primary text-white" type="submit" className="w-100">Réserver</Button>
                         </Form>
                     </Col>
                 </Row>
