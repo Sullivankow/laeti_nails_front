@@ -1,10 +1,10 @@
-import React from "react";
-import "../App.css"; // Assure-toi d'avoir les styles
+import React, { useState } from "react";
+import "../App.css";
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
-const images = [
+const initialImages = [
     { id: 1, src: "src/images/ongle1.jpg", title: "ongle" },
     { id: 2, src: "src/images/ongle1.jpg", title: "ongle" },
     { id: 3, src: "src/images/ongle1.jpg", title: "ongle" },
@@ -15,18 +15,35 @@ const images = [
     { id: 8, src: "src/images/ongle1.jpg", title: "ongle" },
 ];
 
-function Galerie({ isAdmin = true }) { // Mettre isAdmin à true pour voir les icônes
+function Galerie({ isAdmin = true }) {
+    const [images, setImages] = useState(initialImages);
+
+    const handleEdit = (image: { id: number; src: string; title: string; }) => {
+        console.log("Éditer l'image :", image);
+        // Tu peux ici ouvrir une modal ou rediriger vers un formulaire
+    };
+
+    const handleDelete = (id: number) => {
+        if (window.confirm("Voulez-vous vraiment supprimer cette image ?")) {
+            setImages((prev) => prev.filter((img) => img.id !== id));
+        }
+    };
+
     return (
-        <section className="galerie-section container">
+        <section id="galerie-section" className="galerie-section container">
             <h2 className="title-section text-center my-5">Notre Galerie</h2>
+
             <div className="galerie-grid">
                 {images.map((image) => (
                     <div key={image.id} className="galerie-item">
-                        {/* Icônes visibles seulement si admin */}
                         {isAdmin && (
                             <div className="image-actions">
-                                <button className="edit-btn"><FontAwesomeIcon icon={faEdit} /></button>
-                                <button className="delete-btn"><FontAwesomeIcon icon={faTrash} /></button>
+                                <button className="edit-btn" onClick={() => handleEdit(image)}>
+                                    <FontAwesomeIcon icon={faEdit} />
+                                </button>
+                                <button className="delete-btn" onClick={() => handleDelete(image.id)}>
+                                    <FontAwesomeIcon icon={faTrash} />
+                                </button>
                             </div>
                         )}
                         <img src={image.src} alt={image.title} className="galerie-img" />
@@ -36,9 +53,10 @@ function Galerie({ isAdmin = true }) { // Mettre isAdmin à true pour voir les i
                     </div>
                 ))}
             </div>
+
             <div className="d-flex justify-content-center pt-4">
                 <Button variant="success" size="lg" className="mt-auto">
-                    <a href="#" className="text-white text-decoration-none">Ajouter une image</a>
+                    <a href="/" className="text-white text-decoration-none">Ajouter une image</a>
                 </Button>
             </div>
         </section>
@@ -46,4 +64,5 @@ function Galerie({ isAdmin = true }) { // Mettre isAdmin à true pour voir les i
 }
 
 export default Galerie;
+
 
