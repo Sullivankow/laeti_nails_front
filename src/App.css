@@ -42,10 +42,11 @@
 
 
   /*CAROUSEL*/
-  .carousel-image {
+   .carousel-image {
     width: 100%;       /* Prend toute la largeur */
     max-height: 600px; /* Réduit la hauteur maximale */
     object-fit: cover; /* Coupe l'image pour qu'elle rentre bien */
+    filter: brightness(60%); /* Rend l'image plus sombre */
   }
 
 
