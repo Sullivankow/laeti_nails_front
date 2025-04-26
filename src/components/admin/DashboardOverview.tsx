@@ -45,7 +45,7 @@ function DashboardOverview() {
             <Card className="mb-4 shadow-sm">
                 <Card.Body>
                     <Card.Title>Objectif du mois</Card.Title>
-                    <ProgressBar now={60} label={`60%`} />
+                    <ProgressBar className="progressBar" now={60} label={`60%`} variant="success" />
                 </Card.Body>
             </Card>
 
