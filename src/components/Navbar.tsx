@@ -33,7 +33,7 @@ function Navbar() {
           />
           <a className="navbar-brand text-success ms-2"
             style={{ fontFamily: 'Playwrite US Trad, sans-serif', fontSize: '28px' }}
-            href="#"
+            href="/"
           >
             Laeti Nails
           </a>
