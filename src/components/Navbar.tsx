@@ -76,13 +76,13 @@ function Navbar() {
                   className={`dropdown-menu-custom ${dropdownOpen ? "show" : ""}`}
                 >
                   <ul className="list-unstyled mb-0">
-                    <li>
-                      <Link to="/admin" className="dropdown-item">Dashboard</Link>
+                    <li className="nav-item">
+                      <Link to="/admin" className="nav-link">Dashboard</Link>
                     </li>
-                    <li>
+                    <li className="nav-item">
                       <button
                         onClick={handleLogout}
-                        className="dropdown-item text-danger"
+                        className=" nav-link"
                       >
                         Déconnexion
                       </button>
@@ -109,7 +109,7 @@ function Navbar() {
         </button>
 
       </div>
-    </nav>
+    </nav >
   );
 }
 
