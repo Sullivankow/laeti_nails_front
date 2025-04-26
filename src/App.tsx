@@ -15,6 +15,7 @@ import Login from "./pages/Login"; // Import de la page Login
 import Contact from "./pages/Contact"; // Import de la page Login
 import Registration from "./pages/Registration"; // Import de la page Registration
 import Reviews from "./pages/Reviews"; // Import de la page formulaire avis
+import AdminDashboard from "./components/admin/AdminDashboard";
 
 function App() {
   return (
@@ -48,6 +49,8 @@ function App() {
           <Route path="/registration" element={<Registration />} />
           {/* Route pour la page formulaire avis */}
           <Route path="/review" element={<Reviews />} />
+          {/* Route pour la page adminDashboard */}
+          <Route path="/admin" element={<AdminDashboard />} />
 
         </Routes>
       </div>

@@ -25,7 +25,7 @@ const Login: React.FC = () => {
             const fakeData = { token: "fake-jwt-token", role: "admin" };
 
             setAuth(fakeData.token, fakeData.role);
-            navigate("/"); // Redirige après connexion réussie
+            navigate("/admin"); // Redirige après connexion réussie
         } else {
             setErrorMessage("Identifiants incorrects !");
         }
