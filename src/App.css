@@ -40,6 +40,50 @@
   }
 
 
+/*ICONE DE PROFIL*/
+/* Fade-in pour le menu déroulant */
+.dropdown-menu-custom {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  min-width: 150px;
+  z-index: 1000;
+  padding: 0.5rem;
+  opacity: 0; /* Commence invisible */
+  visibility: hidden; /* Caché par défaut */
+  transition: opacity 0.3s ease, visibility 0s 0.3s; /* Transition de visibilité */
+}
+
+/* Quand le menu est ouvert (visible) */
+.dropdown-menu-custom.show {
+  opacity: 1; /* Devient visible */
+  visibility: visible; /* Rendu visible */
+  transition: opacity 0.3s ease, visibility 0s; /* Transition de visibilité */
+}
+
+
+/* Transition de l'icône du profil au survol */
+.profile-icon{
+  color:var(--succes-color) !important;
+}
+.profile-icon:hover {
+  color:var(--dark-color) !important;
+  transform: scale(1.1); /* Agrandissement de l'icône */
+  transition: all 0.3s ease; /* Transition fluide */
+}
+
+
+
+
+
+
+
+
+
 
   /*CAROUSEL*/
    .carousel-image {
@@ -412,3 +456,16 @@ button.btn-primary:hover {
     padding: 4px 6px;
   }
 }
+
+
+/*ICONE DE PROFIL NAVIGATION*/
+/* Sur grand écran (desktop), réaligner en dessous */
+@media (min-width: 992px) {
+  .dropdown-menu-custom-profil {
+    
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+  }
+}
+

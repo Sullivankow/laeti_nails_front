@@ -21,7 +21,7 @@ const Login: React.FC = () => {
         setErrorMessage(null); // Réinitialiser le message d'erreur
 
         // Simuler un utilisateur existant (à remplacer par un appel API réel)
-        if (formData.email === "admin@example.com" && formData.password === "admin123") {
+        if (formData.email === "admin@email.com" && formData.password === "admin123") {
             const fakeData = { token: "fake-jwt-token", role: "admin" };
 
             setAuth(fakeData.token, fakeData.role);

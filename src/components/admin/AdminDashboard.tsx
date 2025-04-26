@@ -1,42 +1,63 @@
-
+import { Link } from "react-router-dom";
+//@ts-expect-error désactivation error ts
+import { logout } from "../../utils/auth";
+import { useNavigate } from "react-router-dom";
 
 function AdminDashboard() {
+    const navigate = useNavigate();
+    // Fonction pour gérer la déconnexion
+    const handleLogout = () => {
+        logout();
+        navigate("/"); // Redirection vers l'accueil après déconnexion
+    };
+
+
     return (
         <div className="container-fluid">
             <div className="row">
                 {/* Sidebar */}
-                <nav className="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+                <nav className="col-md-3 col-lg-2 d-md-block bg-light sidebar min-vh-100">
                     <div className="position-sticky pt-3">
-                        <h5 className="text-center">Company Name</h5>
+                        <h5 className="text-center">Laeti Nails</h5>
                         <ul className="nav flex-column mt-4">
                             <li className="nav-item">
                                 <a className="nav-link active" aria-current="page" href="#">
-                                    Dashboard
+                                    <i className="fas fa-chart-line me-2"></i> Tableau de bord
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">
-                                    Orders
+                                    <i className="fas fa-calendar-alt me-2"></i> Mes rendez-vous
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">
-                                    Products
+                                    <i className="fas fa-users me-2"></i> Clients
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">
-                                    Customers
+                                    <i className="fas fa-spa me-2"></i> Prestations et tarifs
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">
-                                    Reports
+                                    <i className="fas fa-boxes me-2"></i> Stocks et Produits
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">
-                                    Integrations
+                                    <i className="fas fa-user-clock me-2"></i> Employés et Planning
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">
+                                    <i className="fas fa-euro-sign me-2"></i> Finance
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">
+                                    <i className="fas fa-bullhorn me-2"></i> Marketing et Promotion
                                 </a>
                             </li>
                         </ul>
@@ -47,25 +68,26 @@ function AdminDashboard() {
                                 +
                             </a>
                         </h6>
+
                         <ul className="nav flex-column mb-2">
                             <li className="nav-item">
                                 <a className="nav-link" href="#">
-                                    Current month
+                                    <i className="fas fa-calendar me-2"></i> Mois en cours
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">
-                                    Last quarter
+                                    <i className="fas fa-calendar-week me-2"></i> Il y a 15 min
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">
-                                    Social engagement
+                                    <i className="fas fa-heart me-2"></i> Engagement social
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">
-                                    Year-end sale
+                                    <i className="fas fa-tags me-2"></i> Soldes de fin d'année
                                 </a>
                             </li>
                         </ul>
@@ -75,13 +97,18 @@ function AdminDashboard() {
                         <ul className="nav flex-column">
                             <li className="nav-item">
                                 <a className="nav-link" href="#">
-                                    Settings
+                                    <i className="fas fa-cogs me-2"></i> Paramètres
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">
-                                    Sign out
+                                <a className="nav-link" href="/">
+                                    <i className="fas fa-solid fa-house me-2"></i> Accueil
                                 </a>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/" className="nav-link" onClick={handleLogout}>
+                                    <i className="fas fa-sign-out-alt me-2"></i> Déconnexion
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -93,11 +120,11 @@ function AdminDashboard() {
                         <h1 className="h2">Dashboard</h1>
                         <div className="btn-toolbar mb-2 mb-md-0">
                             <div className="btn-group me-2">
-                                <button type="button" className="btn btn-sm btn-outline-secondary">Share</button>
-                                <button type="button" className="btn btn-sm btn-outline-secondary">Export</button>
+                                <button type="button" className="btn btn-sm btn-outline-secondary">Partager</button>
+                                <button type="button" className="btn btn-sm btn-outline-secondary">Exporter</button>
                             </div>
                             <button type="button" className="btn btn-sm btn-outline-secondary dropdown-toggle">
-                                This week
+                                Cette semaine
                             </button>
                         </div>
                     </div>
@@ -124,7 +151,6 @@ function AdminDashboard() {
                                     <td>placeholder</td>
                                     <td>text</td>
                                 </tr>
-                                {/* Ajoute d'autres lignes ici */}
                             </tbody>
                         </table>
                     </div>
@@ -135,5 +161,7 @@ function AdminDashboard() {
 }
 
 export default AdminDashboard;
+
+
 
 
