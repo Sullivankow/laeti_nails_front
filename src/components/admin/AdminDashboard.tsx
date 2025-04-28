@@ -2,11 +2,13 @@ import { Link, useNavigate } from "react-router-dom";
 // @ts-expect-error désactivation error ts
 import { logout } from "../../utils/auth";
 import DashboardOverview from "./DashboardOverview";
+import MesRendezVous from "./MesRendezVous";
 import { useState } from "react";
 
 function AdminDashboard() {
     const navigate = useNavigate();
     const [selectedView, setSelectedView] = useState("dashboard"); // Gérer l'état pour afficher les différentes sections
+
 
     const handleLogout = () => {
         logout();
@@ -120,6 +122,7 @@ function AdminDashboard() {
                     {/* Affichage dynamique du contenu */}
                     {selectedView === "dashboard" && <DashboardOverview />}
                     {/* Autres sections peuvent être ajoutées ici selon l'état */}
+                    {selectedView === "appointments" && <MesRendezVous />}
                 </main>
             </div>
         </div>
