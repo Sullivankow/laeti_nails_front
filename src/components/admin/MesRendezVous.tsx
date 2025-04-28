@@ -1,6 +1,8 @@
 
 import { useState } from 'react';
 import { Table, Button, Form, Badge, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 
 const MesRendezVous = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -77,7 +79,10 @@ const MesRendezVous = () => {
                     />
                 </Col>
                 <Col md={6} className="text-end">
-                    <Button variant="primary">Ajouter un rendez-vous</Button>
+                    <Link to="/">
+                        <Button variant="primary text-white">Ajouter un rendez-vous</Button>
+                    </Link>
+
                 </Col>
             </Row>
 
