@@ -58,9 +58,11 @@ const ClientAdmin: React.FC = () => {
     return (
         <div className="p-4">
             <h2 className="mb-4">Liste des clients</h2>
+
+            {/*Ajouter un modal quand le back sera prêt pour faire apparaître une fenêtre pour l'ajout de client  */}
             <Col md={12} className="text-end mb-4">
                 <Link to="/">
-                    <Button variant="primary text-white">Ajouter un rendez-vous</Button>
+                    <Button variant="primary text-white">Ajouter un client</Button>
                 </Link>
 
             </Col>

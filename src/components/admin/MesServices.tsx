@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Container, Table } from 'react-bootstrap';
+import { Button, Col, Container, Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 type Service = {
@@ -46,6 +47,14 @@ const MesServices: React.FC = () => {
     return (
         <Container className="my-4">
             <h2 className="mb-4 text-center">Liste des prestations</h2>
+
+            {/*Ajouter un modal quand le back sera prêt, pour faire apparaître une fenêtre pour l'ajout */}
+            <Col md={12} className="text-end mb-4">
+                <Link to="/">
+                    <Button variant="primary text-white">Ajouter un service</Button>
+                </Link>
+
+            </Col>
 
             <div style={{ overflowX: 'auto' }}>
                 <Table striped bordered hover responsive>
