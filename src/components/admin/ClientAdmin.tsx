@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Table, Button, Modal } from 'react-bootstrap';
+import { Table, Button, Modal, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 // Interface TypeScript pour un client
 interface Client {
@@ -57,6 +58,12 @@ const ClientAdmin: React.FC = () => {
     return (
         <div className="p-4">
             <h2 className="mb-4">Liste des clients</h2>
+            <Col md={12} className="text-end mb-4">
+                <Link to="/">
+                    <Button variant="primary text-white">Ajouter un rendez-vous</Button>
+                </Link>
+
+            </Col>
             <Table striped bordered hover responsive>
                 <thead>
                     <tr>

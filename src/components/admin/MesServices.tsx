@@ -1,5 +1,6 @@
 import React from 'react';
-import { Table, Button, Container } from 'react-bootstrap';
+import { Button, Container, Table } from 'react-bootstrap';
+
 
 type Service = {
     id: number;
@@ -45,6 +46,7 @@ const MesServices: React.FC = () => {
     return (
         <Container className="my-4">
             <h2 className="mb-4 text-center">Liste des prestations</h2>
+
             <div style={{ overflowX: 'auto' }}>
                 <Table striped bordered hover responsive>
                     <thead>
