@@ -4,6 +4,7 @@ import { logout } from "../../utils/auth";
 import DashboardOverview from "./DashboardOverview";
 import MesRendezVous from "./MesRendezVous";
 import { useState } from "react";
+import ClientAdmin from "./ClientAdmin";
 
 function AdminDashboard() {
     const navigate = useNavigate();
@@ -123,6 +124,7 @@ function AdminDashboard() {
                     {selectedView === "dashboard" && <DashboardOverview />}
                     {/* Autres sections peuvent être ajoutées ici selon l'état */}
                     {selectedView === "appointments" && <MesRendezVous />}
+                    {selectedView === "clients" && <ClientAdmin />}
                 </main>
             </div>
         </div>
