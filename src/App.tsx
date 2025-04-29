@@ -17,6 +17,8 @@ import Registration from "./pages/Registration"; // Import de la page Registrati
 import Reviews from "./pages/Reviews"; // Import de la page formulaire avis
 import AdminDashboard from "./components/admin/AdminDashboard";
 import DashboardOverview from "./components/admin/DashboardOverview";
+import MesRendezVous from "./components/admin/MesRendezVous";
+import ClientAdmin from "./components/admin/ClientAdmin";
 
 function App() {
   return (
@@ -56,6 +58,10 @@ function App() {
           <Route path="/admin" element={<AdminDashboard />} />
           {/* Route pour la page DashboardOverview */}
           <Route path="/dashboardoverview" element={<DashboardOverview />} />
+          {/* Route pour la page MesRendezVous */}
+          <Route path="/dashboardmesrendezvous" element={<MesRendezVous />} />
+          {/* Route pour la page ClientAdmin */}
+          <Route path="/dashboardclientadmin" element={<ClientAdmin />} />
 
         </Routes>
       </div>
