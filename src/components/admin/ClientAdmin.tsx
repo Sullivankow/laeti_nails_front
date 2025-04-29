@@ -105,7 +105,7 @@ const ClientAdmin: React.FC = () => {
                             <p><strong>Inscription :</strong> {selectedClient.dateInscription}</p>
                             <p><strong>Nombre de RDV :</strong> {selectedClient.nbRdv}</p>
                             <p><strong>Dernier RDV :</strong> {selectedClient.dernierRdv}</p>
-                            <p><strong>Notes :</strong> {selectedClient.notes || 'Aucune'}</p>
+                            <p><strong>Notes :</strong> {selectedClient.notes ?? 'Aucune'}</p>
                         </>
                     )}
                 </Modal.Body>
