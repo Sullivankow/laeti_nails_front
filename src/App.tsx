@@ -19,6 +19,7 @@ import AdminDashboard from "./components/admin/AdminDashboard";
 import DashboardOverview from "./components/admin/DashboardOverview";
 import MesRendezVous from "./components/admin/MesRendezVous";
 import ClientAdmin from "./components/admin/ClientAdmin";
+import MesServices from "./components/admin/MesServices";
 
 function App() {
   return (
@@ -62,6 +63,8 @@ function App() {
           <Route path="/dashboardmesrendezvous" element={<MesRendezVous />} />
           {/* Route pour la page ClientAdmin */}
           <Route path="/dashboardclientadmin" element={<ClientAdmin />} />
+          {/* Route pour la page MesServices */}
+          <Route path="/dashboardmeservices" element={<MesServices />} />
 
         </Routes>
       </div>
