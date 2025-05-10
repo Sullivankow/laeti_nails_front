@@ -20,6 +20,7 @@ import DashboardOverview from "./components/admin/DashboardOverview";
 import MesRendezVous from "./components/admin/MesRendezVous";
 import ClientAdmin from "./components/admin/ClientAdmin";
 import MesServices from "./components/admin/MesServices";
+import StockProduits from "./components/admin/StockProduit";
 
 function App() {
   return (
@@ -65,6 +66,8 @@ function App() {
           <Route path="/dashboardclientadmin" element={<ClientAdmin />} />
           {/* Route pour la page MesServices */}
           <Route path="/dashboardmeservices" element={<MesServices />} />
+          {/* Route pour la page StockProduit */}
+          <Route path="/dashboardStockProduit" element={<StockProduits />} />
 
         </Routes>
       </div>
