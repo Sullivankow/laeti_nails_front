@@ -67,7 +67,7 @@ function AdminDashboard() {
                             </li>
                             <li className="nav-item">
                                 <button className="nav-link text-start border-0  w-100" onClick={() => setSelectedView("marketing")}>
-                                    <i className="fas fa-bullhorn me-2"></i> Marketing et Promotion
+                                    <i className="fas fa-bullhorn me-2"></i> Marketing
                                 </button>
                             </li>
                         </ul>
