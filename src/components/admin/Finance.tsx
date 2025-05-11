@@ -131,7 +131,7 @@ const Finance = () => {
             {/* Bouton pour générer un rapport */}
             <Row className="mt-4">
                 <Col className="text-center">
-                    <Button variant="primary text-white mb-2">Générer un Rapport</Button>
+                    <Button variant="primary text-white mb-4">Générer un Rapport</Button>
                 </Col>
             </Row>
         </Container>

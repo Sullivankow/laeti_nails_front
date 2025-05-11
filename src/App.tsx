@@ -23,6 +23,7 @@ import MesServices from "./components/admin/MesServices";
 import StockProduits from "./components/admin/StockProduit";
 import Employees from "./components/admin/Employees";
 import Finance from "./components/admin/Finance";
+import Marketing from "./components/admin/Marketing";
 
 function App() {
   return (
@@ -74,6 +75,8 @@ function App() {
           <Route path="/dashboardEmployee" element={<Employees />} />
           {/* Route pour la page Finance */}
           <Route path="/dashboardFinance" element={<Finance />} />
+          {/* Route pour la page Marketing */}
+          <Route path="/dashboardMarketing" element={<Marketing />} />
 
         </Routes>
       </div>
