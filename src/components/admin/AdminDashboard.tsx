@@ -7,6 +7,7 @@ import { useState } from "react";
 import ClientAdmin from "./ClientAdmin";
 import MesServices from "./MesServices";
 import StockProduits from "./StockProduit";
+import Employees from "./Employees";
 
 function AdminDashboard() {
     const navigate = useNavigate();
@@ -129,6 +130,7 @@ function AdminDashboard() {
                     {selectedView === "clients" && <ClientAdmin />}
                     {selectedView === "services" && <MesServices />}
                     {selectedView === "stocks" && <StockProduits />}
+                    {selectedView === "employees" && <Employees />}
                 </main>
             </div>
         </div>
