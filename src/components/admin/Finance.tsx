@@ -30,8 +30,8 @@ const Finance = () => {
             {
                 label: "Revenus (€)",
                 data: [5000, 7000, 8000, 6000, 15000],
-                backgroundColor: "rgba(75, 192, 192, 0.6)",
-                borderColor: "rgba(75, 192, 192, 1)",
+                backgroundColor: "#C492B1",
+                borderColor: "#E8B4BC",
                 borderWidth: 1,
             },
         ],
