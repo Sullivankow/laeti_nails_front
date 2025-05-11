@@ -25,6 +25,7 @@ import Employees from "./components/admin/Employees";
 import Finance from "./components/admin/Finance";
 import Marketing from "./components/admin/Marketing";
 import MoisEnCours from "./components/admin/MoisEnCours";
+import Minutes from "./components/admin/Minutes";
 
 function App() {
   return (
@@ -79,7 +80,9 @@ function App() {
           {/* Route pour la page Marketing */}
           <Route path="/dashboardMarketing" element={<Marketing />} />
           {/* Route pour la page Mois en cours */}
-          <Route path="/dashboardMarketing" element={<MoisEnCours />} />
+          <Route path="/dashboardMonth" element={<MoisEnCours />} />
+          {/* Route pour la page Mois en cours */}
+          <Route path="/dashboardMinutes" element={<Minutes />} />
 
         </Routes>
       </div>
