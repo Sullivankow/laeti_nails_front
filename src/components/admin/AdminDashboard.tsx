@@ -8,6 +8,7 @@ import ClientAdmin from "./ClientAdmin";
 import MesServices from "./MesServices";
 import StockProduits from "./StockProduit";
 import Employees from "./Employees";
+import Finance from "./Finance";
 
 function AdminDashboard() {
     const navigate = useNavigate();
@@ -131,6 +132,7 @@ function AdminDashboard() {
                     {selectedView === "services" && <MesServices />}
                     {selectedView === "stocks" && <StockProduits />}
                     {selectedView === "employees" && <Employees />}
+                    {selectedView === "finance" && <Finance />}
                 </main>
             </div>
         </div>
