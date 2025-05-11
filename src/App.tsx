@@ -24,6 +24,7 @@ import StockProduits from "./components/admin/StockProduit";
 import Employees from "./components/admin/Employees";
 import Finance from "./components/admin/Finance";
 import Marketing from "./components/admin/Marketing";
+import MoisEnCours from "./components/admin/MoisEnCours";
 
 function App() {
   return (
@@ -77,6 +78,8 @@ function App() {
           <Route path="/dashboardFinance" element={<Finance />} />
           {/* Route pour la page Marketing */}
           <Route path="/dashboardMarketing" element={<Marketing />} />
+          {/* Route pour la page Mois en cours */}
+          <Route path="/dashboardMarketing" element={<MoisEnCours />} />
 
         </Routes>
       </div>

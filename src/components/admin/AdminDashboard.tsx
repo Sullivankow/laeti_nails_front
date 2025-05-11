@@ -10,6 +10,7 @@ import StockProduits from "./StockProduit";
 import Employees from "./Employees";
 import Finance from "./Finance";
 import Marketing from "./Marketing";
+import MoisEnCours from "./MoisEnCours";
 
 function AdminDashboard() {
     const navigate = useNavigate();
@@ -72,32 +73,32 @@ function AdminDashboard() {
                         </ul>
 
                         <h6 className="sidebar-heading d-flex justify-content-between align-items-center mt-4 mb-1 text-muted">
-                            <span>Saved reports</span>
-                            <a className="link-secondary" href="#" aria-label="Add a new report">
+                            <span>Reportings</span>
+                            <a className="link-secondary" href="/" aria-label="Add a new report">
                                 +
                             </a>
                         </h6>
 
                         <ul className="nav flex-column mb-2">
                             <li className="nav-item">
-                                <a className="nav-link" href="#">
+                                <button className="nav-link text-start border-0  w-100" onClick={() => setSelectedView("month")}>
                                     <i className="fas fa-calendar me-2"></i> Mois en cours
-                                </a>
+                                </button>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">
+                                <button className="nav-link text-start border-0  w-100" onClick={() => setSelectedView("minutes")}>
                                     <i className="fas fa-calendar-week me-2"></i> Il y a 15 min
-                                </a>
+                                </button>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">
+                                <button className="nav-link text-start border-0  w-100" onClick={() => setSelectedView("social")}>
                                     <i className="fas fa-heart me-2"></i> Engagement social
-                                </a>
+                                </button>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">
+                                <button className="nav-link text-start border-0  w-100" onClick={() => setSelectedView("sales")}>
                                     <i className="fas fa-tags me-2"></i> Soldes de fin d'année
-                                </a>
+                                </button>
                             </li>
                         </ul>
 
@@ -135,6 +136,7 @@ function AdminDashboard() {
                     {selectedView === "employees" && <Employees />}
                     {selectedView === "finance" && <Finance />}
                     {selectedView === "marketing" && <Marketing />}
+                    {selectedView === "month" && <MoisEnCours />}
                 </main>
             </div>
         </div>
