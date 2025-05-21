@@ -13,6 +13,7 @@ import Marketing from "./Marketing";
 import MoisEnCours from "./MoisEnCours";
 import Minutes from "./Minutes";
 import EngagementSocial from "./EngagementSocial";
+import AdminSetting from "./AdminSetting";
 
 function AdminDashboard() {
     const navigate = useNavigate();
@@ -141,6 +142,7 @@ function AdminDashboard() {
                     {selectedView === "month" && <MoisEnCours />}
                     {selectedView === "minutes" && <Minutes />}
                     {selectedView === "social" && <EngagementSocial />}
+                    {selectedView === "settings" && <AdminSetting />}
                 </main>
             </div>
         </div>

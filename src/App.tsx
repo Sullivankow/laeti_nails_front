@@ -27,6 +27,7 @@ import Marketing from "./components/admin/Marketing";
 import MoisEnCours from "./components/admin/MoisEnCours";
 import Minutes from "./components/admin/Minutes";
 import EngagementSocial from "./components/admin/EngagementSocial";
+import AdminSetting from "./components/admin/AdminSetting";
 
 function App() {
   return (
@@ -86,6 +87,8 @@ function App() {
           <Route path="/dashboardMinutes" element={<Minutes />} />
           {/* Route pour la page Engagement Social */}
           <Route path="/dashboardSocial" element={<EngagementSocial />} />
+          {/* Route pour la page Paramètre */}
+          <Route path="/adminSetting" element={<AdminSetting />} />
 
         </Routes>
       </div>
