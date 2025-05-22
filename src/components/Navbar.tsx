@@ -78,7 +78,7 @@ function Navbar() {
                   <ul className="list-unstyled mb-0">
                     <li className="nav-item">
                       {userRole === "admin" ? (
-                        <Link to="/admin" className="nav-link">Dashboard Admin</Link>
+                        <Link to="/admin" className="nav-link">Admin</Link>
                       ) : (
                         <Link to="/user" className="nav-link">Dashboard</Link>
                       )}
