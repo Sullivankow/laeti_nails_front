@@ -13,7 +13,7 @@ function Navbar() {
   useEffect(() => {
     const auth = getAuth();
     setIsAuthenticated(!!auth.token);
-    setUserRole(auth.role || null); // Assumes getAuth() returns an object with a 'role' property
+    setUserRole(auth.role ?? null); // Assumes getAuth() returns an object with a 'role' property
   }, []);
 
   const handleLogout = () => {
