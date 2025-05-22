@@ -26,6 +26,12 @@ const Login: React.FC = () => {
 
             setAuth(fakeData.token, fakeData.role);
             navigate("/admin"); // Redirige après connexion réussie
+        }
+
+        else if (formData.email === "user@email.com" && formData.password === "user123") {
+            const fakeData = { token: "fake-jwt-token", role: "user" };
+            setAuth(fakeData.token, fakeData.role);
+            navigate("/user"); // Redirige après connexion réussie
         } else {
             setErrorMessage("Identifiants incorrects !");
         }

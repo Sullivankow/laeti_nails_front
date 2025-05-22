@@ -28,6 +28,7 @@ import MoisEnCours from "./components/admin/MoisEnCours";
 import Minutes from "./components/admin/Minutes";
 import EngagementSocial from "./components/admin/EngagementSocial";
 import AdminSetting from "./components/admin/AdminSetting";
+import UserDashboard from "./components/user/UserDashboard";
 
 function App() {
   return (
@@ -89,6 +90,11 @@ function App() {
           <Route path="/dashboardSocial" element={<EngagementSocial />} />
           {/* Route pour la page Paramètre */}
           <Route path="/adminSetting" element={<AdminSetting />} />
+
+
+          {/* PARTIE UTILISATEUR */}
+          {/* Route pour la page UserDashboard */}
+          <Route path="/user" element={<UserDashboard />} />
 
         </Routes>
       </div>
