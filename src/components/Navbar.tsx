@@ -7,11 +7,13 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [userRole, setUserRole] = useState<string | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     const auth = getAuth();
     setIsAuthenticated(!!auth.token);
+    setUserRole(auth.role || null); // Assumes getAuth() returns an object with a 'role' property
   }, []);
 
   const handleLogout = () => {
@@ -72,17 +74,19 @@ function Navbar() {
 
               {/* Menu déroulant du profil */}
               {dropdownOpen && (
-                <div
-                  className={`dropdown-menu-custom ${dropdownOpen ? "show" : ""}`}
-                >
+                <div className={`dropdown-menu-custom ${dropdownOpen ? "show" : ""}`}>
                   <ul className="list-unstyled mb-0">
                     <li className="nav-item">
-                      <Link to="/admin" className="nav-link">Dashboard</Link>
+                      {userRole === "admin" ? (
+                        <Link to="/admin" className="nav-link">Dashboard Admin</Link>
+                      ) : (
+                        <Link to="/user" className="nav-link">Dashboard</Link>
+                      )}
                     </li>
                     <li className="nav-item">
                       <button
                         onClick={handleLogout}
-                        className=" nav-link"
+                        className="nav-link"
                       >
                         Déconnexion
                       </button>
@@ -114,6 +118,22 @@ function Navbar() {
 }
 
 export default Navbar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
